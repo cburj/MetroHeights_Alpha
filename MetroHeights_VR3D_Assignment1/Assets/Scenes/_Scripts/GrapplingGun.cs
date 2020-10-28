@@ -11,15 +11,12 @@ public class GrapplingGun : MonoBehaviour
     public Transform gunTip, camera, player;
     public float maxDistance = 100.0f;
     private SpringJoint joint;
-
-    /*Crosshair Stuff*/
-    /*public RawImage Crosshair;
-    public Texture GreenCrosshair;
-    public Texture RedCrosshair;*/
-
     /*Spring Settings*/
     public float springForce = 250f;
     public float springDamper = 5f;
+
+    /* The damage each laser beam inflicts on enemies */
+    public float LaserDamage = 100.0f;
 
     void Awake()
     {
@@ -31,6 +28,7 @@ public class GrapplingGun : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             StartGrapple();
+            ShootEnemy();
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -43,9 +41,6 @@ public class GrapplingGun : MonoBehaviour
         /*We only want to draw the rope after everything else
         has been updated - otherwise we get a stuttery rope */
         DrawRope();
-
-        /*Check if we can make the grapple*/
-        /*CrosshairColor();*/
     }
 
     void StartGrapple()
@@ -73,21 +68,21 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
-    /*Casts rays so that we can visually confirm if a 
-       a grapple is possible at the current distance.
-       */
-    /*void CrosshairColor()
+    void ShootEnemy()
     {
         RaycastHit beam;
-        if (Physics.Raycast(camera.position, camera.forward, out beam, maxDistance))
+        if (Physics.Raycast(camera.position, camera.forward, out beam, maxDistance)
+            && (beam.transform.tag == "Enemy"))
         {
-            Crosshair.texture = GreenCrosshair;
+            Debug.Log("Enemy Shot...");
+            float enemyHP = beam.transform.GetComponent<EnemyStats>().hp - LaserDamage;
+
+            if (enemyHP <= 0)
+                Destroy(beam.transform.gameObject, 0);
+            else
+                beam.transform.GetComponent<EnemyStats>().hp = enemyHP;
         }
-        else
-        {
-            Crosshair.texture = RedCrosshair;
-        }
-    }*/
+    }
 
     void StopGrapple()
     {
