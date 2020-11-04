@@ -22,6 +22,8 @@ public class EnemyController : MonoBehaviour
 
     private int ammoRemaining;
 
+    private int damage = 25;    /*Amount of damage each bullet does*/
+
     private void Start()
     {
         ammoRemaining = maxAmmo;
@@ -62,6 +64,7 @@ public class EnemyController : MonoBehaviour
         transform.LookAt(playerTarget);
     }
 
+    /*
     IEnumerator Shoot()
     {
         while(true)
@@ -69,5 +72,5 @@ public class EnemyController : MonoBehaviour
             Debug.Log(">>> ENEMY SHOOTING");
             yield return new WaitForSeconds(shotDelta);
         }
-    }
+    }*/
 }
