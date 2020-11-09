@@ -181,7 +181,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1143555699}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &136258836
+--- !u!1 &98235270
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,10 +189,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 136258837}
-  - component: {fileID: 136258840}
-  - component: {fileID: 136258839}
-  - component: {fileID: 136258838}
+  - component: {fileID: 98235271}
+  - component: {fileID: 98235274}
+  - component: {fileID: 98235273}
+  - component: {fileID: 98235272}
   m_Layer: 5
   m_Name: Compass
   m_TagString: Untagged
@@ -200,46 +200,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!224 &136258837
+--- !u!224 &98235271
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136258836}
+  m_GameObject: {fileID: 98235270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1277410892}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 243}
-  m_SizeDelta: {x: -580.37585, y: -605.831}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 212.9}
+  m_SizeDelta: {x: 0, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &136258838
+--- !u!114 &98235272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136258836}
+  m_GameObject: {fileID: 98235270}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d70e119db22edf4b878046b1c86ff98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compassImage: {fileID: 136258839}
+  compassImage: {fileID: 98235273}
   player: {fileID: 1860874229}
---- !u!114 &136258839
+--- !u!114 &98235273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136258836}
+  m_GameObject: {fileID: 98235270}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
@@ -252,20 +252,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 1f1dd5e1b23fb424ead0cc53b7e56d3b, type: 3}
+  m_Texture: {fileID: 2800000, guid: 4b10ae585c5d3c84891ca5a2cfa6a8a8, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
---- !u!222 &136258840
+--- !u!222 &98235274
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136258836}
+  m_GameObject: {fileID: 98235270}
   m_CullTransparentMesh: 0
 --- !u!4 &258327129 stripped
 Transform:
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 617432463}
   - component: {fileID: 617432462}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: STATIC UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1277410892}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 37f78a96be415014c8ec50cdff7111f8, type: 3}
+  m_Texture: {fileID: 2800000, guid: 85013213194af4340a444825adc969bd, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1149,8 +1149,8 @@ RectTransform:
   m_Children:
   - {fileID: 1141912225}
   - {fileID: 469188123}
-  - {fileID: 136258837}
   - {fileID: 617432461}
+  - {fileID: 98235271}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
