@@ -17,6 +17,13 @@ public class GrapplingGun : MonoBehaviour
 
     /* The damage each laser beam inflicts on enemies */
     public float LaserDamage = 100.0f;
+    
+    Animator gunAnimator;
+
+    void Start()
+    {
+        gunAnimator = GetComponent<Animator>();
+    }
 
     void Awake()
     {
@@ -49,6 +56,9 @@ public class GrapplingGun : MonoBehaviour
 
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance))
         {
+            //We can play the animation now...
+            gunAnimator.SetTrigger("Shoot");
+
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
@@ -74,7 +84,9 @@ public class GrapplingGun : MonoBehaviour
         if (Physics.Raycast(camera.position, camera.forward, out beam, maxDistance)
             && (beam.transform.tag == "Enemy"))
         {
-            Debug.Log("Enemy Shot...");
+            //We can play the animation now...
+            gunAnimator.SetTrigger("Shoot");
+            
             float enemyHP = beam.transform.GetComponent<EnemyController>().hp - LaserDamage;
 
             if (enemyHP <= 0)
