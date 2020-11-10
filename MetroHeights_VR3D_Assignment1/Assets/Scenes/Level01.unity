@@ -1092,6 +1092,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1974405502}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1126332930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4218631622705935509, guid: de9e6acaf25a6814eb4850b128734be9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4218631623317260948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1126332932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126332930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc10b84b1b56d8d4bb4ab0ff97302016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0.1
+  smoothAmount: 6
+  maxAmount: 0.15
 --- !u!1 &1141912224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,6 +6883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LaserDamage
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4218631624369797329, guid: de9e6acaf25a6814eb4850b128734be9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4218631624559474809, guid: de9e6acaf25a6814eb4850b128734be9,
         type: 3}
