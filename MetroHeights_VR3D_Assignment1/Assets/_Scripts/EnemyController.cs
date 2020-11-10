@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /* SOURCES: */
@@ -9,7 +10,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float hp = 100.0f;
+    public float maxHP = 100.0f;
+    public float hp;
 
     /*The time between each shot the enemy makes*/
     public float shotDelta = 1.0f;
@@ -32,10 +34,40 @@ public class EnemyController : MonoBehaviour
     private AudioClip blasterClip;
     private AudioSource audioSource;
 
+    /*HEALTH BAR*/
+    public Slider slider;
+
+    [SerializeField]
+    private float lerpSpeed = 2;
+
     private void Start()
     {
         ammoRemaining = maxAmmo;
         audioSource = gameObject.GetComponent<AudioSource>();
+
+        /*Health Bar*/
+        hp = maxHP;
+        slider.value = CalcHealth();
+    }
+
+    /* Returns the enemy health as a normalised float */
+    public float CalcHealth()
+    {
+        return (hp/(maxHP));
+    }
+
+    public void RecieveDamage(float damage)
+    {
+        float currentHP = CalcHealth();
+        if( hp - damage <= 0 )
+        {
+            Kill();
+        }
+        else
+        {
+            hp -= damage;
+            slider.value = Mathf.MoveTowards( currentHP, CalcHealth(), (Time.deltaTime * lerpSpeed ) );
+        }
     }
 
     public void Kill()

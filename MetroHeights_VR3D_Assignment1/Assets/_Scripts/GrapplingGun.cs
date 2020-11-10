@@ -89,10 +89,7 @@ public class GrapplingGun : MonoBehaviour
             
             float enemyHP = beam.transform.GetComponent<EnemyController>().hp - LaserDamage;
 
-            if (enemyHP <= 0)
-                beam.transform.GetComponent<EnemyController>().Kill();
-            else
-                beam.transform.GetComponent<EnemyController>().hp = enemyHP;
+            beam.transform.GetComponent<EnemyController>().RecieveDamage(LaserDamage);
         }
     }
 
