@@ -6322,6 +6322,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &1628289472 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4218631623001546500, guid: de9e6acaf25a6814eb4850b128734be9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4218631623317260948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1646967043
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,6 +6890,17 @@ PrefabInstance:
       propertyPath: LaserDamage
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4218631624369797328, guid: de9e6acaf25a6814eb4850b128734be9,
+        type: 3}
+      propertyPath: barrelPos
+      value: 
+      objectReference: {fileID: 1628289472}
+    - target: {fileID: 4218631624369797328, guid: de9e6acaf25a6814eb4850b128734be9,
+        type: 3}
+      propertyPath: blasterFX
+      value: 
+      objectReference: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4,
+        type: 3}
     - target: {fileID: 4218631624369797329, guid: de9e6acaf25a6814eb4850b128734be9,
         type: 3}
       propertyPath: m_Enabled

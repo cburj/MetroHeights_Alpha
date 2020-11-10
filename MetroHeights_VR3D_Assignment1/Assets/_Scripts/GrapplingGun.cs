@@ -15,6 +15,10 @@ public class GrapplingGun : MonoBehaviour
     public float springForce = 250f;
     public float springDamper = 5f;
 
+    /*Blaster ParticleFX*/
+    public GameObject blasterFX;
+    public Transform barrelPos;
+
     /* The damage each laser beam inflicts on enemies */
     public float LaserDamage = 100.0f;
     
@@ -50,6 +54,30 @@ public class GrapplingGun : MonoBehaviour
         DrawRope();
     }
 
+
+    void ShootFX()
+    {
+        GameObject explosionEffect = Instantiate(blasterFX) as GameObject;
+
+        //Set its position to the position of the enemy.
+        explosionEffect.transform.position = barrelPos.transform.position;
+
+        //Create a new reference to the particle system on the game object.
+        ParticleSystem expParticles = explosionEffect.GetComponent<ParticleSystem>();
+
+        //Make a new reference/variable that points to the "main" variable of the PS.
+        var main = expParticles.main;
+
+        //Prevent looping
+        main.loop = false;
+        //Play the PS
+        expParticles.Play();
+
+        //Destroy the PS once its finished
+        Destroy(explosionEffect.gameObject, main.duration);
+    }
+
+
     void StartGrapple()
     {
         RaycastHit hit;
@@ -58,6 +86,9 @@ public class GrapplingGun : MonoBehaviour
         {
             //We can play the animation now...
             gunAnimator.SetTrigger("Shoot");
+
+            //Play the particle fx
+            ShootFX();
 
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
