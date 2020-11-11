@@ -21,7 +21,12 @@ public class GrapplingGun : MonoBehaviour
 
     /* The damage each laser beam inflicts on enemies */
     public float LaserDamage = 100.0f;
-    
+
+    /*Seconds between each grapple shot */
+    public float shotInterval;
+    private bool isShooting = false;
+    public GameObject indicator;
+
     Animator gunAnimator;
 
     void Start()
@@ -82,10 +87,16 @@ public class GrapplingGun : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance))
+        if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance)
+            && isShooting == false)
         {
             //We can play the animation now...
             gunAnimator.SetTrigger("Shoot");
+
+            /* We let the controller know we are shooting*/
+            /* This prevents the player from shooting too fast */
+            isShooting = true;
+            StartCoroutine("Shoot");
 
             //Play the particle fx
             ShootFX();
@@ -113,11 +124,17 @@ public class GrapplingGun : MonoBehaviour
     {
         RaycastHit beam;
         if (Physics.Raycast(camera.position, camera.forward, out beam, maxDistance)
-            && (beam.transform.tag == "Enemy"))
+            && (beam.transform.tag == "Enemy") )
         {
             //We can play the animation now...
             gunAnimator.SetTrigger("Shoot");
-            
+
+            /* We let the controller know we are shooting*/
+            /* This prevents the player from shooting too fast */
+            isShooting = true;
+            StartCoroutine("Shoot");
+            Debug.Log("SHOOT AT ENEMY");
+
             float enemyHP = beam.transform.GetComponent<EnemyController>().hp - LaserDamage;
 
             beam.transform.GetComponent<EnemyController>().RecieveDamage(LaserDamage);
@@ -138,5 +155,14 @@ public class GrapplingGun : MonoBehaviour
 
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, grapplePoint);
+    }
+
+    IEnumerator Shoot()
+    {
+        //indicator.SetActive(false);
+        yield return new WaitForSeconds(shotInterval);
+        /*We are no longer shooting*/
+        isShooting = false;
+        //indicator.SetActive(true);
     }
 }
