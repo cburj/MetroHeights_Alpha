@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 772171680}
+  NextScene: '"Level01"'
 --- !u!82 &772171682
 AudioSource:
   m_ObjectHideFlags: 0

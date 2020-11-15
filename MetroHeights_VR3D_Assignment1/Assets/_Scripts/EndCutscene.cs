@@ -8,6 +8,8 @@ public class EndCutscene : MonoBehaviour
 {
     public VideoPlayer video;
 
+    public string NextScene;
+
     void Start()
     {
         StartCoroutine("checkCutscene");
@@ -20,6 +22,6 @@ public class EndCutscene : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene(NextScene);
     }
 }
