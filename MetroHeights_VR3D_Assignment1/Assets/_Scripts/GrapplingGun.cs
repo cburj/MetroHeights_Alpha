@@ -178,4 +178,9 @@ public class GrapplingGun : MonoBehaviour
         canShoot = true;
         //indicator.SetActive(true);
     }
+
+    public void resetAmmoCount(int count)
+    {
+        ammoCount = count;
+    }
 }
