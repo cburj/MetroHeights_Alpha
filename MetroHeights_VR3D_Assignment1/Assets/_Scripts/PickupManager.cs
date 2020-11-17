@@ -11,9 +11,10 @@ public class PickupManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if( col.gameObject.tag == AmmoTag )
+        /*We only pickup the item if we don't have max ammo */
+        grapple = blaster.GetComponent<GrapplingGun>();
+        if( ( col.gameObject.tag == AmmoTag ) && ( grapple.getAmmoCount() < grapple.magazineSize ) )
         {
-            grapple = blaster.GetComponent<GrapplingGun>();
             grapple.resetAmmoCount(grapple.magazineSize);
             Destroy(col.gameObject);
         }

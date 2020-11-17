@@ -29,12 +29,21 @@ public class GrapplingGun : MonoBehaviour
     private bool canShoot = true;
     public GameObject indicator;
 
+    /*AUDIO*/
+    public AudioClip[] blasterSounds;
+    private AudioClip blasterClip;
+    private AudioSource audioSource;
+
+    public AudioClip reloadSound;
+
     Animator gunAnimator;
 
     void Start()
     {
         gunAnimator = GetComponent<Animator>();
         ammoCount = magazineSize;
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Awake()
@@ -100,6 +109,12 @@ public class GrapplingGun : MonoBehaviour
         {
             //We can play the animation now...
             gunAnimator.SetTrigger("Shoot");
+
+            /*Play a random blaster sound from the array */
+            int index = Random.Range(0, blasterSounds.Length);
+            blasterClip = blasterSounds[index];
+            audioSource.clip = blasterClip;
+            audioSource.Play();
 
             ammoCount--;
 
@@ -182,5 +197,10 @@ public class GrapplingGun : MonoBehaviour
     public void resetAmmoCount(int count)
     {
         ammoCount = count;
+
+        /* Play the Reload Sound */
+        blasterClip = reloadSound;
+        audioSource.clip = blasterClip;
+        audioSource.Play();
     }
 }
