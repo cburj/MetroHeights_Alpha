@@ -1113,7 +1113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866512259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.009, y: 0.0709, z: 0.1306}
+  m_LocalPosition: {x: -0.0003, y: 0.0903, z: 0.2248}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.17}
   m_Children: []
   m_Father: {fileID: 919132149155053677}
@@ -7779,7 +7779,17 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadSound
       value: 
-      objectReference: {fileID: 8300000, guid: 5d48ab9f9a00d534994f1def1c891e0c, type: 3}
+      objectReference: {fileID: 8300000, guid: 2b372439a441c824ca31bb30aab0f92a, type: 3}
+    - target: {fileID: 4218631624369797328, guid: de9e6acaf25a6814eb4850b128734be9,
+        type: 3}
+      propertyPath: dryFireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1891f3f1cc01d6458b4fe651d28cb9d, type: 3}
+    - target: {fileID: 4218631624369797328, guid: de9e6acaf25a6814eb4850b128734be9,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 866512259}
     - target: {fileID: 4218631624369797329, guid: de9e6acaf25a6814eb4850b128734be9,
         type: 3}
       propertyPath: m_Enabled

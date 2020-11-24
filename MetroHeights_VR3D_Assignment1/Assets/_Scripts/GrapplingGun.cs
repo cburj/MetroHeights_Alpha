@@ -22,10 +22,13 @@ public class GrapplingGun : MonoBehaviour
     /* The damage each laser beam inflicts on enemies */
     public float LaserDamage = 100.0f;
 
+    /*Reference to the ammo slider/indicator */
+    public GameObject slider;
+
     /*Seconds between each grapple shot */
     public float shotInterval = 0.5f;
     public int magazineSize = 10;
-    private int ammoCount = 0; 
+    private int ammoCount = 0;
     private bool canShoot = true;
     public GameObject indicator;
 
@@ -35,6 +38,7 @@ public class GrapplingGun : MonoBehaviour
     private AudioSource audioSource;
 
     public AudioClip reloadSound;
+    public AudioClip dryFireSound;
 
     Animator gunAnimator;
 
@@ -44,6 +48,8 @@ public class GrapplingGun : MonoBehaviour
         ammoCount = magazineSize;
 
         audioSource = gameObject.GetComponent<AudioSource>();
+
+        slider.SetActive(false);
     }
 
     void Awake()
@@ -105,7 +111,7 @@ public class GrapplingGun : MonoBehaviour
 
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance)
             && canShoot == true
-            && ammoCount > 0 )
+            && ammoCount > 0)
         {
             //We can play the animation now...
             gunAnimator.SetTrigger("Shoot");
@@ -117,6 +123,12 @@ public class GrapplingGun : MonoBehaviour
             audioSource.Play();
 
             ammoCount--;
+
+            if (ammoCount <= 0)
+            {
+                /*Show the slider indicator */
+                slider.SetActive(true);
+            }
 
             /* We let the controller know we are shooting*/
             /* This prevents the player from shooting too fast */
@@ -143,13 +155,21 @@ public class GrapplingGun : MonoBehaviour
 
             lr.positionCount = 2;
         }
+        /* They have no ammo left at this point*/
+        if (ammoCount <= 0)
+        {
+            /* Play the Dry-Fire Sound */
+            blasterClip = dryFireSound;
+            audioSource.clip = blasterClip;
+            audioSource.Play();
+        }
     }
 
     void ShootEnemy()
     {
         RaycastHit beam;
         if (Physics.Raycast(camera.position, camera.forward, out beam, maxDistance)
-            && (beam.transform.tag == "Enemy") 
+            && (beam.transform.tag == "Enemy")
             && ammoCount > 0)
         {
             float enemyHP = beam.transform.GetComponent<EnemyController>().hp - LaserDamage;
@@ -192,5 +212,8 @@ public class GrapplingGun : MonoBehaviour
         blasterClip = reloadSound;
         audioSource.clip = blasterClip;
         audioSource.Play();
+
+        /*Hide the slider indicator */
+        slider.SetActive(false);
     }
 }
