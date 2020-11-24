@@ -152,17 +152,6 @@ public class GrapplingGun : MonoBehaviour
             && (beam.transform.tag == "Enemy") 
             && ammoCount > 0)
         {
-            //We can play the animation now...
-            gunAnimator.SetTrigger("Shoot");
-
-            /* We let the controller know we are shooting*/
-            /* This prevents the player from shooting too fast */
-            canShoot = false;
-            StartCoroutine("Shoot");
-            Debug.Log("SHOOT AT ENEMY");
-
-            ammoCount--;
-
             float enemyHP = beam.transform.GetComponent<EnemyController>().hp - LaserDamage;
 
             beam.transform.GetComponent<EnemyController>().RecieveDamage(LaserDamage);
@@ -197,6 +186,7 @@ public class GrapplingGun : MonoBehaviour
     public void resetAmmoCount(int count)
     {
         ammoCount = count;
+        gunAnimator.SetTrigger("Reload");
 
         /* Play the Reload Sound */
         blasterClip = reloadSound;
