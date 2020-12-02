@@ -325,7 +325,7 @@ Transform:
   - {fileID: 1314750105}
   - {fileID: 475857808}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &97375369 stripped
 GameObject:
@@ -671,7 +671,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &403467537
 PrefabInstance:
@@ -1306,7 +1306,7 @@ Transform:
   m_Children:
   - {fileID: 59322072}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804291233
 GameObject:
@@ -1337,7 +1337,7 @@ Transform:
   m_Children:
   - {fileID: 1310199402}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &822900225 stripped
 GameObject:
@@ -1813,7 +1813,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: af1bbc5e1cc7408459cb983fa5d1d416,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af1bbc5e1cc7408459cb983fa5d1d416,
         type: 3}
@@ -2159,7 +2159,7 @@ RectTransform:
   - {fileID: 203518811}
   - {fileID: 1379125264}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2256,7 +2256,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1310199399
 GameObject:
@@ -7971,7 +7971,7 @@ PrefabInstance:
     - target: {fileID: 4218631622981241632, guid: de9e6acaf25a6814eb4850b128734be9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4218631622981241632, guid: de9e6acaf25a6814eb4850b128734be9,
         type: 3}
