@@ -17,6 +17,23 @@ public class RainFollow : MonoBehaviour
         float PlayerY = Player.transform.position.y;
 
         transform.position = new Vector3(PlayerX, RainY, PlayerZ);
+
+        /* Enable/Disable Rain Effects*/
+        RainFX();
+    }
+
+    private void Start()
+    {
+        /* Enable/Disable Rain Effects*/
+        RainFX();
+    }
+
+    public void RainFX()
+    {
+        if(PlayerPrefs.GetInt("RainFX") == 1)
+            gameObject.SetActive(true);
+        else
+            gameObject.SetActive(false);
     }
 }
 
