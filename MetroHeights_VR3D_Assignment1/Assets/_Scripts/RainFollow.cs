@@ -30,7 +30,7 @@ public class RainFollow : MonoBehaviour
 
     public void RainFX()
     {
-        if(PlayerPrefs.GetInt("RainFX") == 1)
+        if(PlayerPrefs.GetInt("PREF_RainFX") == 1)
             gameObject.SetActive(true);
         else
             gameObject.SetActive(false);

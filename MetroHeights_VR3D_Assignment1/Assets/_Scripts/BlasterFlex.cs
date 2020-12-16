@@ -5,7 +5,6 @@ using UnityEngine;
 public class BlasterFlex : MonoBehaviour
 {
     Animator gunAnimator;
-    bool yep = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +17,6 @@ public class BlasterFlex : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             gunAnimator.SetTrigger("Flex");
-            yep = true;
         }
     }
 }
