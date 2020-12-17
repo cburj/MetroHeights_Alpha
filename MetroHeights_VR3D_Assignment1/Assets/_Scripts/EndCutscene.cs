@@ -13,6 +13,7 @@ public class EndCutscene : MonoBehaviour
     void Start()
     {
         StartCoroutine("checkCutscene");
+        Cursor.visible = false;
     }
 
     IEnumerator checkCutscene()
