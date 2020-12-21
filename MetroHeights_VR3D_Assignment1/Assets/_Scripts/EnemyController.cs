@@ -119,15 +119,8 @@ public class EnemyController : MonoBehaviour
             audioSource.Play();
 
             float playerHP = beam.transform.GetComponent<PlayerStats>().currentHealth - damage;
-
-            if (playerHP <= 0)
-            {
-                /*Debug.Log("You are DEAD!");*/
-            }
-            else
-            {
-                beam.transform.GetComponent<PlayerStats>().currentHealth = playerHP;
-            }
+            
+            beam.transform.GetComponent<PlayerStats>().currentHealth = playerHP;
         }
         /*We are no longer shooting*/
         isShooting = false;
