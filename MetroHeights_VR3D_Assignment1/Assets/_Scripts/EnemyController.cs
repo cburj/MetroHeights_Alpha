@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     public float shotDelta = 1.0f;
 
     public GameObject explosion;
+    public GameObject muzzleFlash;
+    public GameObject barrelPos;
 
     public Transform playerTarget; /*The player to look at*/
 
@@ -103,9 +105,31 @@ public class EnemyController : MonoBehaviour
         GetPlayerProximity();
     }
 
+    public void shootAnimation()
+    {
+        GameObject shootEffect = Instantiate(muzzleFlash) as GameObject;
+
+        //Set its position to the position of the enemy.
+        shootEffect.transform.position = barrelPos.transform.position;
+
+        //Create a new reference to the particle system on the game object.
+        ParticleSystem particles = shootEffect.GetComponent<ParticleSystem>();
+
+        //Make a new reference/variable that points to the "main" variable of the PS.
+        var main = particles.main;
+
+        //Prevent looping
+        main.loop = false;
+        //Play the PS
+        particles.Play();
+
+        //Destroy the PS once its finished
+        Destroy(shootEffect.gameObject, main.duration);
+    }
+
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(shotDelta);
 
         //Cast the ray and shoot if we can collide.
         RaycastHit beam;
@@ -117,6 +141,8 @@ public class EnemyController : MonoBehaviour
             blasterClip = blasterSounds[index];
             audioSource.clip = blasterClip;
             audioSource.Play();
+
+            shootAnimation();
 
             float playerHP = beam.transform.GetComponent<PlayerStats>().currentHealth - damage;
             
