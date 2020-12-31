@@ -22,7 +22,6 @@ public class EndCutscene : MonoBehaviour
         {
             yield return null;
         }
-
         SceneManager.LoadScene(NextScene);
     }
 }
