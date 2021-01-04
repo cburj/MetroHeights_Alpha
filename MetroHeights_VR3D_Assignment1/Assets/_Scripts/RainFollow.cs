@@ -9,6 +9,8 @@ using UnityEngine;
 public class RainFollow : MonoBehaviour
 {
     public Transform Player;
+    public AudioSource rainSounds;
+
     void LateUpdate()
     {
         float RainY = transform.position.y;
@@ -24,6 +26,8 @@ public class RainFollow : MonoBehaviour
 
     private void Start()
     {
+        rainSounds = gameObject.GetComponent<AudioSource>();
+
         /* Enable/Disable Rain Effects*/
         RainFX();
     }
@@ -31,9 +35,14 @@ public class RainFollow : MonoBehaviour
     public void RainFX()
     {
         if(PlayerPrefs.GetInt("PREF_RainFX") == 1)
+        {
             gameObject.SetActive(true);
+        }
         else
+        {
             gameObject.SetActive(false);
+            rainSounds.Stop();
+        }
     }
 }
 

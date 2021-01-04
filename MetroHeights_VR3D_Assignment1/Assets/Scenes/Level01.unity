@@ -7280,6 +7280,7 @@ GameObject:
   - component: {fileID: 1310199401}
   - component: {fileID: 1310199400}
   - component: {fileID: 1310199403}
+  - component: {fileID: 1310199404}
   m_Layer: 0
   m_Name: RAIN
   m_TagString: Untagged
@@ -12036,6 +12037,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 738771380}
+  rainSounds: {fileID: 1310199404}
+--- !u!82 &1310199404
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310199399}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 542593bfbaba5214181ba3b0202aba5f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1323536602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: af1bbc5e1cc7408459cb983fa5d1d416,
@@ -37915,7 +38013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a8f17768f021245ac0300fc3a2ebe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVol: 1
 --- !u!4 &1628289472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4218631623001546500, guid: de9e6acaf25a6814eb4850b128734be9,
@@ -41209,6 +41306,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148010892175851100, guid: 72b456deba102f442bbb9f9acbf50ae6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.385106
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148010892175851100, guid: 72b456deba102f442bbb9f9acbf50ae6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.004753828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148010892175851100, guid: 72b456deba102f442bbb9f9acbf50ae6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.0203116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148010892175851100, guid: 72b456deba102f442bbb9f9acbf50ae6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.009254932
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148010892175851100, guid: 72b456deba102f442bbb9f9acbf50ae6,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.7628095
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148010892175851100, guid: 72b456deba102f442bbb9f9acbf50ae6,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.88140476
       objectReference: {fileID: 0}
     - target: {fileID: 5453860730144042258, guid: 72b456deba102f442bbb9f9acbf50ae6,
         type: 3}
