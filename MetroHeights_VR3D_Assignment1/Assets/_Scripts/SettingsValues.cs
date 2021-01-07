@@ -13,6 +13,7 @@ public class SettingsValues : MonoBehaviour
 
         /* DEFAULT VALUES */
         PlayerPrefs.SetFloat("PREF_MasterVolume", 1.0f);
+        PlayerPrefs.SetFloat("PREF_DroneRange", 1.0f);
         PlayerPrefs.SetInt("PREF_RainFX", 1);
         PlayerPrefs.SetInt("PREF_PostFX", 1);
     }
@@ -38,5 +39,10 @@ public class SettingsValues : MonoBehaviour
     public void VolSet(Slider volSlider)
     {
         PlayerPrefs.SetFloat("PREF_MasterVolume", volSlider.value);
+    }
+
+    public void DroneSet(Slider droneSlider)
+    {
+        PlayerPrefs.SetFloat("PREF_DroneRange", droneSlider.value);
     }
 }

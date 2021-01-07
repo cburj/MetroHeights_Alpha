@@ -50,6 +50,11 @@ public class EnemyController : MonoBehaviour
         /*Health Bar*/
         hp = maxHP;
         slider.value = CalcHealth();
+
+        /* Get the drone range multiplier*/
+        float modifier = PlayerPrefs.GetFloat("PREF_DroneRange");
+        if( modifier >= 1 || modifier <= 2)
+            range = (int)(range * modifier);
     }
 
     /* Returns the enemy health as a normalised float */
