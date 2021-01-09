@@ -114,7 +114,8 @@ public class GrapplingGun : MonoBehaviour
 
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance)
             && canShoot == true
-            && ammoCount > 0)
+            && ammoCount > 0
+            && (hit.transform.tag != "DeathBox"))
         {
             //We can play the animation now...
             gunAnimator.SetTrigger("Shoot");

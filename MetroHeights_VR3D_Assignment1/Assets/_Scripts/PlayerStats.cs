@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
     {
         if( currentHealth <= 0 )
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

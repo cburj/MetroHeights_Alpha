@@ -8,6 +8,7 @@ TagManager:
   - AmmoPickup
   - Node
   - Medical
+  - DeathBox
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Ground
   - Ladder
   - Weapons
-  - 
+  - DeathBox
   - 
   - 
   - 

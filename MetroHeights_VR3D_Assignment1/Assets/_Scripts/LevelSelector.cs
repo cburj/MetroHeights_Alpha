@@ -10,6 +10,8 @@ public class LevelSelector : MonoBehaviour
 
     public void ChangeScene()
     {
+        PlayerPrefs.SetString("PREF_CurrentLevel", sceneName);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(sceneName);
     }
 }

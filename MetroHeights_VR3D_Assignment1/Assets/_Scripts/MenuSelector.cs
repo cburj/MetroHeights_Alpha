@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuSelector : MonoBehaviour
 {
@@ -31,5 +32,21 @@ public class MenuSelector : MonoBehaviour
         LevelsObject.SetActive(false);
         LoreObject.SetActive(true);
 
+    }
+
+    public void Respawn()
+    {
+        string lastLevel = PlayerPrefs.GetString("PREF_CurrentLevel");
+        SceneManager.LoadScene(lastLevel);
+    }
+
+    public void JumpToLevels()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void GameQuit()
+    {
+        Application.Quit();
     }
 }
