@@ -644,6 +644,7 @@ MonoBehaviour:
   maxAmmo: 20
   damage: 10
   range: 15
+  droneValue: 1000
   blasterSounds:
   - {fileID: 8300000, guid: 62074453d81e52c449d8455f540702b9, type: 3}
   - {fileID: 8300000, guid: fa43a6629a8a8204da0e54fe20d712db, type: 3}
@@ -8741,6 +8742,8 @@ RectTransform:
   - {fileID: 1794031671}
   - {fileID: 442031137}
   - {fileID: 517450268}
+  - {fileID: 1292186720}
+  - {fileID: 1636098544}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8841,6 +8844,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1292186719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292186720}
+  - component: {fileID: 1292186722}
+  - component: {fileID: 1292186721}
+  m_Layer: 5
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1292186720
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292186719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1277410892}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -672.7, y: 349.4}
+  m_SizeDelta: {x: 557.24994, y: 81.73819}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1292186721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292186719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.043137256, b: 0.21568629, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: fc5d6dd2f6ff1d845bf98dce7a36b928, type: 3}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 47
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'TIMER: 0:30.125'
+--- !u!222 &1292186722
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292186719}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1293057438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40185,6 +40266,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4218631623317260948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1636098543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636098544}
+  - component: {fileID: 1636098546}
+  - component: {fileID: 1636098545}
+  m_Layer: 5
+  m_Name: Value
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1636098544
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636098543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1277410892}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -672.7, y: 329.4}
+  m_SizeDelta: {x: 557.24994, y: 81.73819}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1636098545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636098543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.043137256, b: 0.21568629, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: fc5d6dd2f6ff1d845bf98dce7a36b928, type: 3}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 47
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'VALUE: M$25,000'
+--- !u!222 &1636098546
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636098543}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1638397156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40299,6 +40458,7 @@ MonoBehaviour:
   maxAmmo: 20
   damage: 10
   range: 15
+  droneValue: 0
   blasterSounds:
   - {fileID: 8300000, guid: 62074453d81e52c449d8455f540702b9, type: 3}
   - {fileID: 8300000, guid: fa43a6629a8a8204da0e54fe20d712db, type: 3}
@@ -42250,7 +42410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7, y: -5.100006}
+  m_AnchoredPosition: {x: 1755.8999, y: -5.100006}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1907360440
@@ -42266,7 +42426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.095341444, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.043137256, b: 0.21568628, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -42279,13 +42439,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 9
     m_MaxSize: 55
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 60
+  m_Text: 60 FPS
 --- !u!222 &1907360441
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43202,6 +43362,7 @@ MonoBehaviour:
   maxAmmo: 20
   damage: 10
   range: 15
+  droneValue: 2000
   blasterSounds:
   - {fileID: 8300000, guid: 62074453d81e52c449d8455f540702b9, type: 3}
   - {fileID: 8300000, guid: fa43a6629a8a8204da0e54fe20d712db, type: 3}
@@ -43607,6 +43768,7 @@ MonoBehaviour:
   maxAmmo: 20
   damage: 10
   range: 15
+  droneValue: 2500
   blasterSounds:
   - {fileID: 8300000, guid: 62074453d81e52c449d8455f540702b9, type: 3}
   - {fileID: 8300000, guid: fa43a6629a8a8204da0e54fe20d712db, type: 3}
@@ -43992,6 +44154,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathBox: DeathBox
+--- !u!114 &2089130566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089130555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9266f94798faa7e4c98a516173e4ad5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1292186721}
+  valueText: {fileID: 1636098545}
+  startTime: 0
+  defaultColour: {r: 0.21176471, g: 0.8352941, b: 0.9019608, a: 1}
+  warningColour: {r: 1, g: 0.043137256, b: 0.21568628, a: 1}
+  contractValue: 25000
+  targetTime: 10
 --- !u!1001 &2100235698
 PrefabInstance:
   m_ObjectHideFlags: 0

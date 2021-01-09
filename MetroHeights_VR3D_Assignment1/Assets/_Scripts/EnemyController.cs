@@ -29,6 +29,8 @@ public class EnemyController : MonoBehaviour
     public int damage = 25;     /*Amount of damage each bullet does*/
     public int range = 10;      /* The minimum distance between the player and enemy before we shoot at them*/
 
+    public int droneValue; /* The reward the user receives for killing this drone */
+
     private bool isShooting = false;
 
     /*AUDIO*/
@@ -79,6 +81,9 @@ public class EnemyController : MonoBehaviour
 
     public void Kill()
     {
+        /* Reward the player for killing the drone */
+        Stopwatch.currentValue += droneValue;
+
         //Pass in the particle system prefab as a game object.
         GameObject explosionEffect = Instantiate(explosion) as GameObject;
 
