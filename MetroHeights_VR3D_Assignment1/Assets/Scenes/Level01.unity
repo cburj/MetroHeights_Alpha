@@ -44172,7 +44172,7 @@ MonoBehaviour:
   defaultColour: {r: 0.21176471, g: 0.8352941, b: 0.9019608, a: 1}
   warningColour: {r: 1, g: 0.043137256, b: 0.21568628, a: 1}
   contractValue: 25000
-  targetTime: 10
+  targetTime: 20
 --- !u!1001 &2100235698
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeliveryNode : MonoBehaviour
 {
@@ -28,7 +29,16 @@ public class DeliveryNode : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && prompt.activeSelf)
         {
-            Debug.Log("YOU HAVE DELIVERED AN ITEM");
+            /* Update the value received for this job */
+            PlayerPrefs.SetInt("PREF_LastFunds", Stopwatch.currentValue);
+
+            /* Calculate teh new bank balance */
+            int accountValue = Stopwatch.currentValue + PlayerPrefs.GetInt("PREF_AccountValue");
+
+            /* Update teh bank balance */
+            PlayerPrefs.SetInt("PREF_AccountValue", accountValue);
+
+            SceneManager.LoadSceneAsync("LevelComplete");
         }
     }
 }
