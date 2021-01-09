@@ -12,6 +12,7 @@ public class CursorController : MonoBehaviour
         Cursor.visible = true;
         Vector2 cursorOffset = new Vector2(crosshair.width / 2, crosshair.height / 2);
         Cursor.SetCursor(crosshair, cursorOffset, CursorMode.Auto);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void Update()

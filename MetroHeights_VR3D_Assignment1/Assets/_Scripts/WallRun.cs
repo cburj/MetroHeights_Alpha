@@ -10,7 +10,7 @@ public class WallRun : MonoBehaviour
 
     //Wallrunning
     public LayerMask whatIsWall;
-    public float wallrunForce,maxWallrunTime, maxWallSpeed;
+    public float wallrunForce, maxWallrunTime, maxWallSpeed;
     bool isWallRight, isWallLeft;
     bool isWallRunning;
     public float maxWallRunCameraTilt, wallRunCameraTilt;
@@ -396,7 +396,7 @@ public class WallRun : MonoBehaviour
             timePassedSonic = 0;
         }
     }
-       
+
     private void Climb()
     {
         //Makes possible to climb even when falling down fast
@@ -420,33 +420,38 @@ public class WallRun : MonoBehaviour
     private float desiredX;
     private void Look()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+        /*Prevent Movement if the game is paused*/
+        if (!PauseMenu.paused)
+        {
 
-        //Find current look rotation
-        Vector3 rot = playerCam.transform.localRotation.eulerAngles;
-        desiredX = rot.y + mouseX;
+            float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+            float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
 
-        //Rotate, and also make sure we dont over- or under-rotate.
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            //Find current look rotation
+            Vector3 rot = playerCam.transform.localRotation.eulerAngles;
+            desiredX = rot.y + mouseX;
 
-        //Perform the rotations
-        playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, wallRunCameraTilt);
-        orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
+            //Rotate, and also make sure we dont over- or under-rotate.
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        //While Wallrunning
-        //Tilts camera in .5 second
-        if (Math.Abs(wallRunCameraTilt) < maxWallRunCameraTilt && isWallRunning && isWallRight)
-            wallRunCameraTilt += Time.deltaTime * maxWallRunCameraTilt * 5;
-        if (Math.Abs(wallRunCameraTilt) < maxWallRunCameraTilt && isWallRunning && isWallLeft)
-            wallRunCameraTilt -= Time.deltaTime * maxWallRunCameraTilt * 5;
+            //Perform the rotations
+            playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, wallRunCameraTilt);
+            orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
 
-        //Tilts camera back again
-        if (wallRunCameraTilt > 0 && !isWallRight && !isWallLeft)
-            wallRunCameraTilt -= Time.deltaTime * maxWallRunCameraTilt * 5;
-        if (wallRunCameraTilt < 0 && !isWallRight && !isWallLeft)
-            wallRunCameraTilt += Time.deltaTime * maxWallRunCameraTilt * 5;
+            //While Wallrunning
+            //Tilts camera in .5 second
+            if (Math.Abs(wallRunCameraTilt) < maxWallRunCameraTilt && isWallRunning && isWallRight)
+                wallRunCameraTilt += Time.deltaTime * maxWallRunCameraTilt * 5;
+            if (Math.Abs(wallRunCameraTilt) < maxWallRunCameraTilt && isWallRunning && isWallLeft)
+                wallRunCameraTilt -= Time.deltaTime * maxWallRunCameraTilt * 5;
+
+            //Tilts camera back again
+            if (wallRunCameraTilt > 0 && !isWallRight && !isWallLeft)
+                wallRunCameraTilt -= Time.deltaTime * maxWallRunCameraTilt * 5;
+            if (wallRunCameraTilt < 0 && !isWallRight && !isWallLeft)
+                wallRunCameraTilt += Time.deltaTime * maxWallRunCameraTilt * 5;
+        }
     }
     private void CounterMovement(float x, float y, Vector2 mag)
     {
