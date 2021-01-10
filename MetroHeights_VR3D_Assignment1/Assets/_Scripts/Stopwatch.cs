@@ -30,10 +30,13 @@ public class Stopwatch : MonoBehaviour
 
     void Update()
     {
+        /* Calculate the time elapsed */
         float t = Time.time - startTime;
 
+        /* Punish players for going over the target time */
         if( t >= targetTime )
         {
+            /* Remove one dollar every second */
             InvokeRepeating("DecrementValue", 1.0f, 1.0f);
             valueText.color = warningColour;
         }
@@ -44,6 +47,7 @@ public class Stopwatch : MonoBehaviour
 
     void DecrementValue()
     {
-        currentValue -= 1;
+        if( currentValue > 0 )
+            currentValue -= 1;
     }
 }
