@@ -125,6 +125,11 @@ public class WallRun : MonoBehaviour
     public LayerMask whatIsLadder;
     bool alreadyStoppedAtLadder;
 
+    /* AUDIO */
+    public AudioClip jumpSound;
+    public AudioClip doubleJumpSound;
+    private AudioSource audioSource;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -136,6 +141,8 @@ public class WallRun : MonoBehaviour
         playerScale = transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
 
@@ -293,6 +300,9 @@ public class WallRun : MonoBehaviour
                 rb.velocity = new Vector3(vel.x, vel.y / 2, vel.z);
 
             Invoke(nameof(ResetJump), jumpCooldown);
+            
+            audioSource.clip = jumpSound;
+            audioSource.Play();
         }
         if (!grounded)
         {
@@ -310,6 +320,9 @@ public class WallRun : MonoBehaviour
             allowDashForceCounter = false;
 
             Invoke(nameof(ResetJump), jumpCooldown);
+
+            audioSource.clip = doubleJumpSound;
+            audioSource.Play();
         }
 
         //Walljump

@@ -7,6 +7,9 @@ public class Stopwatch : MonoBehaviour
 {
     public Text timerText;
     public Text valueText;
+
+    public Text targetTimeText;
+
     public float startTime;
 
     public Color defaultColour;
@@ -19,11 +22,15 @@ public class Stopwatch : MonoBehaviour
     /* The time the user is expected to deliver the item in.*/
     public float targetTime;
 
+    private bool countingDown = false;
+
 
     void Start()
     {
         startTime = Time.time;
         currentValue = contractValue;
+
+        targetTimeText.text = "TARGET: " + targetTime + "sec";
 
         valueText.color = defaultColour;
     }
@@ -34,11 +41,15 @@ public class Stopwatch : MonoBehaviour
         float t = Time.time - startTime;
 
         /* Punish players for going over the target time */
-        if( t >= targetTime )
+        if( t >= targetTime && !countingDown )
         {
             /* Remove one dollar every second */
-            InvokeRepeating("DecrementValue", 1.0f, 1.0f);
+            InvokeRepeating("DecrementValue", 0.1f, 0.01f);
             valueText.color = warningColour;
+            valueText.fontSize = 20;
+
+            /* Prevents us from constantly visitng this part of the loop */
+            countingDown = true;
         }
 
         timerText.text = "TIMER: " + t.ToString("f3");
@@ -48,6 +59,6 @@ public class Stopwatch : MonoBehaviour
     void DecrementValue()
     {
         if( currentValue > 0 )
-            currentValue -= 1;
+            currentValue -= 10;
     }
 }

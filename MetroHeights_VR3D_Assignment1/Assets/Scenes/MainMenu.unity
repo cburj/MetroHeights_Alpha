@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 595838370}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 2
+  m_MaxValue: 1.5
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -1860,6 +1860,7 @@ GameObject:
   - component: {fileID: 715655764}
   - component: {fileID: 715655768}
   - component: {fileID: 715655767}
+  - component: {fileID: 715655769}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1929,12 +1930,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 715655769}
+        m_MethodName: GameQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2086,6 +2087,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 8300000, guid: e309032abfff46f41acb161a991c6b67, type: 3}
+--- !u!114 &715655769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715655762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78891b8659ac71445ae97e825132c647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SettingsObject: {fileID: 0}
+  LevelsObject: {fileID: 0}
+  LoreObject: {fileID: 0}
 --- !u!1 &766413266
 GameObject:
   m_ObjectHideFlags: 0
