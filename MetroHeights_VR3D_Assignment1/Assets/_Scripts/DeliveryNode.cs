@@ -38,6 +38,8 @@ public class DeliveryNode : MonoBehaviour
             /* Update teh bank balance */
             PlayerPrefs.SetInt("PREF_AccountValue", accountValue);
 
+            PlayerPrefs.Save();
+
             SceneManager.LoadSceneAsync("LevelComplete");
         }
     }
