@@ -30,12 +30,8 @@ public class Crosshair : MonoBehaviour
     {
         RaycastHit beam;
         if (Physics.Raycast(camera.position, camera.forward, out beam, blaster.maxDistance))
-        {
             crosshair.color = trueCol;
-        }
         else
-        {
             crosshair.color = falseCol;
-        }
     }
 }
