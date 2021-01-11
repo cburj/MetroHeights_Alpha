@@ -128,6 +128,7 @@ public class WallRun : MonoBehaviour
     /* AUDIO */
     public AudioClip jumpSound;
     public AudioClip doubleJumpSound;
+    public AudioClip slideSound;
     private AudioSource audioSource;
 
     void Awake()
@@ -211,6 +212,10 @@ public class WallRun : MonoBehaviour
             if (grounded)
             {
                 rb.AddForce(orientation.transform.forward * slideForce);
+                
+                /* Play the slide sound if we are on the ground... aka sliding is possible. */  
+                audioSource.clip = slideSound;
+                audioSource.Play();
             }
         }
     }
