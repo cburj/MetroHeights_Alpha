@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HealthCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject player;
     private float healthSize;
     private float health;

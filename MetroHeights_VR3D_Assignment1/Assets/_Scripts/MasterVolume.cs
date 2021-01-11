@@ -6,6 +6,7 @@ public class MasterVolume : MonoBehaviour
 {
     void Update()
     {
+        /*If no pref has been set, set it to 1 */
         if(!PlayerPrefs.HasKey("PREF_MasterVolume"))
         {
             AudioListener.volume = 1.0f;

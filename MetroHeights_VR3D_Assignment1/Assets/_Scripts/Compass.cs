@@ -10,6 +10,7 @@ public class Compass : MonoBehaviour
 
     private void Update()
     {
+        /*Calculate the new rect for the crosshair */
         compassImage.uvRect = new Rect(player.localEulerAngles.y / 360f, 0f, 1f, 1f);
     }
 }

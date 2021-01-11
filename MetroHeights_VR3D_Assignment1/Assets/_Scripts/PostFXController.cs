@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class PostFXController : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         PostFX();
     }
 
-    // Update is called once per frame
     void Update()
     {
         PostFX();

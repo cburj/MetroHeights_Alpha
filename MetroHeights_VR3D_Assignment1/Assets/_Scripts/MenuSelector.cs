@@ -34,17 +34,20 @@ public class MenuSelector : MonoBehaviour
 
     }
 
+    /* Used for pause menu*/
     public void Respawn()
     {
         string lastLevel = PlayerPrefs.GetString("PREF_CurrentLevel");
         SceneManager.LoadScene(lastLevel);
     }
 
+    /* Used for pause menu*/
     public void JumpToLevels()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
+    /* Used for pause menu*/
     public void GameQuit()
     {
         Application.Quit();

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* Used to set all of the preferences in the main menu + set defaults on startup */
+
 public class SettingsValues : MonoBehaviour
 {
     Toggle toggle;

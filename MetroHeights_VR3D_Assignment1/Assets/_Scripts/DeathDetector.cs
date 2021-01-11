@@ -10,6 +10,7 @@ public class DeathDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
+        /*If we collide with a death box, end the game*/
         if ((col.gameObject.tag == DeathBox))
         {
             SceneManager.LoadSceneAsync("GameOver");

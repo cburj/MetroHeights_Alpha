@@ -34,6 +34,7 @@ public class MedicalPickup : MonoBehaviour
 
     private void LateUpdate()
     {
+        /* Check for input and disable to tooltip */
         if (Input.GetKeyDown(KeyCode.E) && toolTip.activeSelf)
         {
             playerHealth.currentHealth = playerHealth.maxHealth;

@@ -29,8 +29,10 @@ public class BlasterSway : MonoBehaviour
         movementX = Mathf.Clamp(movementX, -maxAmount, maxAmount);
         movementY = Mathf.Clamp(movementY, -maxAmount, maxAmount);
 
+        /*Create the new final position */
         Vector3 finalPosition = new Vector3(movementX, movementY, 0);
 
+        /*Move it to that position */
         transform.localPosition = Vector3.Lerp(transform.localPosition, ( finalPosition + initialPosition ), ( smoothAmount * Time.deltaTime ) );
     }
 }

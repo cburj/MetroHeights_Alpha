@@ -18,6 +18,7 @@ public class EndCutscene : MonoBehaviour
 
     IEnumerator checkCutscene()
     {
+        /*Constantly check if the cutscene has ended */
         while(( video.frame) <= 0 || (video.isPlaying == true))
         {
             yield return null;

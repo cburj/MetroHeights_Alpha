@@ -5,17 +5,16 @@ using UnityEngine;
 public class BlasterFlex : MonoBehaviour
 {
     Animator gunAnimator;
-    // Start is called before the first frame update
     void Start()
     {
         gunAnimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            //Play the gun spin animation
             gunAnimator.SetTrigger("Flex");
         }
     }
