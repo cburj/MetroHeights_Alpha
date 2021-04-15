@@ -8,7 +8,7 @@ Most of it is junk, but feel free to use any of the scripts/assets you find. I s
 
 ## Installation
 
-Clone the project using Git/GitHub Desktop and open the project using Unity. Unfortunately, do to compatibility, I had to use Unity Version 2019.4.3 - so some of the newer Unity features couldn't be implemented.
+Clone the project using Git/GitHub Desktop and open the project using Unity. Unfortunately, due to compatibility, I had to use Unity Version 2019.4.3 - so some of the newer Unity features couldn't be implemented.
 
 
 ## Contributing
